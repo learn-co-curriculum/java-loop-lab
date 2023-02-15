@@ -6,195 +6,133 @@
 
 ## Introduction
 
-In this lab, practice implementing the various loops that Java offers. Make use
-of the `for` loop, `while` loop, and the `do-while` loop.
+In this lab, practice implementing the various loops that Java offers. We'll
+also practice debugging to observe the control flow when using loops.
 
-Fork and clone this repository. When you do, you will see one file: `Lab.java`.
-This assignment consists of some starter code and comments to guide you. Follow
-the instructions below.
+Fork and clone this repository. When you do, you will see two files: `Lab1.java`
+and `Lab2.java`. This assignment consists of some starter code and comments to
+guide you. Follow the instructions below.
 
 ## Instructions
 
-Assume we want to print the integers from 0 - a number that the user specifies.
-For example, if the user enters in a value of 5, the program should print the
-numbers 0, 1, 2, 3, 4, 5. You will write the code to accomplish this task using
-a `for` loop, `while` loop, and a `do-while` loop.
+There are two parts to this lab:
 
-Note: You can work either of these sections in any order you want. But it may
-be easier to get one section working at a time and test before moving onto the
-next section.
+1. Debugging and fixing a program to produce the appropriate output.
+2. Choosing the appropriate loop given a scenario.
 
-### For Loop Implementation
+The first part can be found in `Lab1.java` and the second part will be in
+`Lab2.java`.
 
-In this section, use a `for` loop to accomplish the task described above.
+### `Lab1.java` Instructions
 
-- You _must_ use a `for` loop in this section.
-- Go back and review the "For Loops" lesson as needed.
-- If it helps, write out the pseudocode in a text editor of what this section
-  should look like.
-- Hint: Set the initialization statement to a value of `0`.
-- To help, try running the program in the IntelliJ debugger or Java Visualizer.
+In this program, we want to determine how many years have passed from 2000
+to 2011. Notice that these are the values assigned to `startingYear` and
+`targetYear` respectively.
 
-Run the program after you finish completing the above instructions. The output
-for this section, if the user entered in `5`, should look like this:
+Currently, if we run this program, it will provide the following output:
 
 ```text
-The For Loop prints:
-0
-1
-2
-3
-4
-5
+0 year(s) have passed
+1 year(s) have passed
+2 year(s) have passed
+3 year(s) have passed
+4 year(s) have passed
+5 year(s) have passed
+6 year(s) have passed
+7 year(s) have passed
+8 year(s) have passed
+9 year(s) have passed
+10 year(s) have passed
 ```
 
-### While Loop Implementation
-
-In this section, use a `while` loop to accomplish the task described above.
-
-- You _must_ use a `while` loop in this section.
-- Go back and review the "While Loops" lesson as needed.
-- If it helps, write out the pseudocode in a text editor of what this section
-  should look like.
-- Hint: Initialize a sentinel value to `0` prior to entering the loop.
-- To help, try running the program in the IntelliJ debugger or Java Visualizer.
-
-Run the program after you finish completing the above instructions. The output
-for this section, if the user entered in `5`, should look like this:
+But we want to modify the program to give the following output instead:
 
 ```text
-The While Loop prints:
-0
-1
-2
-3
-4
-5
+1 year has passed
+2 years have passed
+3 years have passed
+4 years have passed
+5 years have passed
+6 years have passed
+7 years have passed
+8 years have passed
+9 years have passed
+10 years have passed
 ```
 
-## Do-While Loop Implementation
+- Make sure the case that outputs "0 year(s) have passed" doesn't run anymore.
+  - Hint: It has to do with he way `currentYear` is initialized.
+- Since we know exactly how many times we want to go through these specific set
+  of instructions, this is better suited for a `for` loop. Change the loop from
+  a `while` loop to a `for` loop.
+- Add an `if-else` statement inside the loop so that the output can have the
+  right spelling for "year(s)" and "have" for every case.
+  - See the expected output above.
 
-In this section, use a `do-while` loop to accomplish the task described above.
+Hint: Run the program after you finish each bullet point to see if the output is
+what you expect it to be.
 
-- You _must_ use a `do-while` loop in this section.
-- Go back and review the "Do-While Loops" lesson as needed.
-- If it helps, write out the pseudocode in a text editor of what this section
-  should look like.
-- To help, try running the program in the IntelliJ debugger or Java Visualizer.
+Run the program after you finished completing the above instructions. You may
+also run the program with the IntelliJ debugger, or you can use the Java
+Visualizer tool to step through the control flow of this program.
 
-Run the program after you finish completing the above instructions. The output
-for this section, if the user entered in `5`, should look like this:
+### `Lab2.java` Instructions
+
+In this program, we currently have a menu-driven program. We want the user to
+select what menu item they would like for breakfast.
+
+If we run this program with a user input of `2`, this is what currently prints
+to the console:
 
 ```text
-The Do-While Loop prints:
-0
-1
+Welcome to the restaurant! What would you like for breakfast?
+1. Eggs and Bacon
+2. Oatmeal and Mixed Berries
+3. Pancakes
 2
-3
-4
-5
+Enjoy your oatmeal and mixed berries!
 ```
 
-## Expected Output
+Modify this program so that the user could continue making selections. For
+example, what if the user was putting in a breakfast order for
+a family? You would want to re-iterate through this code multiple times.
 
-Consider the following expected output dependent on the `maxInteger` the user
-enters:
+- Consider the various loops we have learned throughout this section. Choose
+  the loop that seems the most appropriate to handle this scenario.
+- Use the value of `0` as a sentinel value.
+  - Remember, the sentinel value is a value that is used to terminate a loop and
+    stop getting inputs.
+- Modify the program appropriately to implement the sentinel value.
 
-### User Input = 5
+Run the program after you finished completing the above instructions. You may
+also run the program with the IntelliJ debugger, or you can use the Java
+Visualizer tool to step through the control flow of this program.
+
+The following is an example of the expected output given the user inputs:
 
 ```text
-Enter a positive integer to count to:
-5
-The For Loop prints:
-0
+Welcome to the restaurant! What would you like for breakfast?
+1. Eggs and Bacon
+2. Oatmeal and Mixed Berries
+3. Pancakes
 1
+Enjoy your eggs and bacon!
+Welcome to the restaurant! What would you like for breakfast?
+1. Eggs and Bacon
+2. Oatmeal and Mixed Berries
+3. Pancakes
 2
+Enjoy your oatmeal and mixed berries!
+Welcome to the restaurant! What would you like for breakfast?
+1. Eggs and Bacon
+2. Oatmeal and Mixed Berries
+3. Pancakes
 3
-4
-5
+Enjoy your pancakes!
+Welcome to the restaurant! What would you like for breakfast?
+1. Eggs and Bacon
+2. Oatmeal and Mixed Berries
+3. Pancakes
+0
 
-The While Loop prints:
-0
-1
-2
-3
-4
-5
-
-The Do-While Loop prints:
-0
-1
-2
-3
-4
-5
 ```
-
-### User Input = 1
-
-```text
-Enter a positive integer to count to:
-1
-The For Loop prints:
-0
-1
-
-The While Loop prints:
-0
-1
-
-The Do-While Loop prints:
-0
-1
-```
-
-### User Input = 10
-
-```text
-Enter a positive integer to count to:
-10
-The For Loop prints:
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-
-The While Loop prints:
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-
-The Do-While Loop prints:
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-```
-
-## Consider This
-
-We can implement printing integers within a specific range using any of the
-loops that we have learned. Is there a loop you think is more suited for this
-problem? If so, why?
