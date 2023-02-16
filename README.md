@@ -61,7 +61,7 @@ But we want to modify the program to give the following output instead:
 ```
 
 - Make sure the case that outputs "0 year(s) have passed" doesn't run anymore.
-  - Hint: It has to do with he way `currentYear` is initialized.
+  - Hint: It has to do with the way `currentYear` is initialized.
 - Since we know exactly how many times we want to go through these specific set
   of instructions, this is better suited for a `for` loop. Change the loop from
   a `while` loop to a `for` loop.
